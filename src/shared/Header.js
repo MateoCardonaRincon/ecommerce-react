@@ -2,17 +2,23 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 
-const Home = () => {
+import HeaderButtons from "./components/HeaderButtons";
+
+const Header = ({ isLoggedIn, login, cantCarrito }) => {
   return (
     <Navbar bg="primary" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">Kedama</Navbar.Brand>
-        <Nav className="me-auto">
-          <Nav.Link href="/home">Home</Nav.Link>
-          <Nav.Link href="/Carrito">Carrito</Nav.Link>
+        <Navbar.Brand href="/">Mi Tienda</Navbar.Brand>
+        <Nav className="justify-content-end">
+          <HeaderButtons
+            isLoggedIn={isLoggedIn}
+            setLogin={login}
+            cantCarrito={cantCarrito}
+          />
         </Nav>
       </Container>
     </Navbar>
   );
 };
-export default Home;
+
+export default Header;

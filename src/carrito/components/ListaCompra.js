@@ -1,10 +1,7 @@
-import ListaProductos from "../components/ListaProductos"
+import ListaProductos from "../components/ListaProductos";
 
 const ListaProductos = () => {
-    return(
-    <h1></h1>
-        <ListaProductos/>
-        );
+  return <ListaProductos />;
 };
 
 export default ListaProductos;
