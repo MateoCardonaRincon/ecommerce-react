@@ -1,19 +1,33 @@
 {
+<<<<<<< HEAD
   "name": "backend",
+=======
+  "name": "ecommerce-backend",
+>>>>>>> baf62789db8b043fa7ea43e7c84b42e03bacca0d
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
+<<<<<<< HEAD
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
+=======
+    "test": "echo \"Error: no test specified\" && exit 1"
+>>>>>>> baf62789db8b043fa7ea43e7c84b42e03bacca0d
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "express": "^4.17.1",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+=======
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.9",
+>>>>>>> baf62789db8b043fa7ea43e7c84b42e03bacca0d
     "nodemon": "^2.0.13"
   }
 }

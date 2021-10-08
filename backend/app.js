@@ -1,23 +1,24 @@
 var express = require("express");
-var morgan = require("morgan");
+var mongoose = require("mongoose");
+const cors = require("cors");
 var app = express();
 
-app.set("port", 3002);
+const productsRoutes = require("./routes/products");
+const categoriaRoutes = require("./routes/categoria");
 
-// middlewares
 app.use(express.json());
-app.use(morgan("dev"));
+app.use(express.urlencoded({ extended: false }));
+app.use(cors());
 
-// respond with "hello world" when a GET request is made to the homepage
-app.get("/get", (req, res) => {
-  res.send({ msg: "Executing a get!" });
-});
+mongoose
+  .connect(
+    "mongodb+srv://dbUser:AeSlz7E0YxzVZgZR@cluster0.wpilz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+  )
+  .then(() => {
+    console.log("Estamos conectados");
+  });
 
-app.post("/post", (req, res) => {
-  console.log(req.body.title);
-  res.json({ msg: "Executing a post" });
-});
+app.use("/api/products", productsRoutes);
+app.use("/api/categoria", categoriaRoutes);
 
-app.listen(app.get("port"), () => {
-  console.log("Server on port", app.get("port"));
-});
+module.exports = app;
